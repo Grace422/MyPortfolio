@@ -18,9 +18,8 @@ return (
 <Services/>
 <Portfolio/>
 <Testimonial/>
-<Footer/>
 <Contact/>
-
+<Footer/>
 </>
 );
 }
