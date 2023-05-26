@@ -4,7 +4,7 @@ import app from '../../assets/app6.jpeg'
 import web from '../../assets/web2 image.jpg'
 import soft from '../../assets/img6.png'
 import {BiCheck} from 'react-icons/bi'
-//import ListServices from './listServices'
+
 
 
 export const Services = () => {
@@ -12,9 +12,6 @@ export const Services = () => {
     <section id="services">
       <h5>What i offer</h5>
       <h2>Services</h2> 
-      {/* <div className="container services__container">
-         <ListServices /> 
-      </div> */}
             <div className="container services__container">
               <article className="service">
               <div className="image">
