@@ -9,7 +9,7 @@ const Footer = () => {
     return (
       <div className="footer__container">
         <a href="#" className="footer__logo">
-          Brown Alden
+          NEGUE KWAHAM MAEL GRACE
         </a>
 
         <ul className="permalinks">
@@ -37,7 +37,7 @@ const Footer = () => {
         </ul>
 
         <div className="footer__media">
-          <a href="https://linkedin.com" target="blank">
+          <a href="https://linkedin.com" target='https://www.linkedin.com/in/negue-kwaham-mael-grace-2a87a7269/'>
             <BsLinkedin />
           </a>
           <a href="https://github.com" target="blank">
