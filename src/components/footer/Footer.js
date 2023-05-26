@@ -37,7 +37,7 @@ const Footer = () => {
         </ul>
 
         <div className="footer__media">
-          <a href="https://linkedin.com" target='https://www.linkedin.com/in/negue-kwaham-mael-grace-2a87a7269/'>
+          <a href="https://linkedin.com" target="https://www.linkedin.com/in/negue-kwaham-mael-grace-2a87a7269/">
             <BsLinkedin />
           </a>
           <a href="https://github.com" target="https://github.com/Grace422/MyPortfolio.git">
