@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 //connect to db and start server
 mongoose
@@ -14,7 +14,7 @@ mongoose
      .then(() => {
         
         app.listen(PORT, () => {
-            console.log('Server Running on port ${PORT}') 
+            console.log(`Server Running on port ${PORT}`) 
         })
      })
      .catch((err) => console.log(err)) 
