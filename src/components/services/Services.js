@@ -15,7 +15,7 @@ export const Services = () => {
             <div className="container services__container">
               <article className="service">
               <div className="image">
-                <img src={web} alt='app image' className='img2'/>
+                <img src={web} alt='app' className='img2'/>
               </div> <br></br>
               <div className='service__name'>
                 <h5>Web Development</h5>  
@@ -35,7 +35,7 @@ export const Services = () => {
               </article>
               <article className="service">
                 <div className="image">
-                <img src={app} alt='app image' className='img2'/>
+                <img src={app} alt='app' className='img2'/>
                 </div>  <br></br>
                 <div className='service__name'>
                 <h5>Mobile App Development</h5> 
@@ -55,7 +55,7 @@ export const Services = () => {
               </article> 
               <article className="service">
               <div className="image">
-                <img src={soft} alt='app image' className='img2'/>
+                <img src={soft} alt='app' className='img2'/>
                 </div>  <br></br>
                 <div className='service__name'>
                 <h5>Software Development</h5>  
