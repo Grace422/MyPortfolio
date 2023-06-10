@@ -1,11 +1,12 @@
 .img2{
-    width: 350px;
+    width: 400px;
     height: 200px;
 }
 .services__container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    margin: 50px;
 }
 
 .service{
