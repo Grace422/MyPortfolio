@@ -9,7 +9,7 @@ const Footer = () => {
     return (
       <div className="footer__container">
         <a href="#header" className="footer__logo">
-          NEGUE KWAHAM MAEL GRACE
+          NEGUE KWAHAM GRACE
         </a>
 
         <ul className="permalinks">
