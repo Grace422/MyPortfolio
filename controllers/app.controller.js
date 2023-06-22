@@ -1,6 +1,6 @@
   const {portfoliomodel} = require("../model/portfolio_model");
-  const {testimonialmodel} = require("../model/testimonial_model");
-
+ 
+  
   exports.portfolioAppRoute = async(req, res) => {
     try {
         items = await portfoliomodel.find({});
