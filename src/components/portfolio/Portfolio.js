@@ -1,87 +1,64 @@
-import React from 'react'
-import './portfolio.css'
-import IMG1 from '../../assets/img1.png'
-import IMG2 from '../../assets/img2.png'
-import IMG3 from '../../assets/img3.png'
-import IMG4 from '../../assets/img2.png'
-import IMG5 from '../../assets/img9.png'
-import IMG6 from '../../assets/img6.png'
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import "./portfolio.css";
+// import img1 from "../../assets/port.PNG";
 
+const Portfolio = () => {
 
-export const Portfolio = () => {
-return (
-<section id="portfolio">
-   <h5>My Recent Work</h5>
-   <h2>Portfolio</h2>
+  const[data, setData] = useState([]);
 
-   <div className="container_port porfolio__container">
-      <article className="portfolio__item">
-         <div className="portfolio__item-image">
-             <img src={IMG1} alt="" /> 
-         </div>
-         <h3>Project 1</h3>
-        <div className="portfolio__item__cta">
-         <a href='https://github.com' className="btn">Github</a>
-         <a href='https://dribbble.com/shots/20177733-Apres-Brand-Identity-Design' className="btn btn-primary" target="blank">Live Demo</a>
-        </div>
-      </article>
+  useEffect(()=> {
+    axios.get("https://kwahamgrace.cyclic.app/api/portfolio").then(response => {
+      const formattedData = response.data.data.map(item => ({
+        id: item._id,
+        image: item.image,
+        title: item.title,
+        github: item.github,
+        demo: item.demo
+      }));
+      setData(formattedData)
+    }).catch(error => {
+      console.log("Error fetching portfolio data:", error);
+    })
+  }, [])
 
-      <article className="portfolio__item">
-         <div className="portfolio__item-image">
-             <img src={IMG2} alt="" /> 
-         </div>
-         <h3>Project 2</h3>
-        <div className="portfolio__item__cta">
-         <a href='https://github.com' className="btn">Github</a>
-         <a href='https://dribbble.com/shots/20177733-Apres-Brand-Identity-Design' className="btn btn-primary" target="blank">Live Demo</a>
-        </div>
-      </article>
-
-      <article className="portfolio__item">
-         <div className="portfolio__item-image">
-             <img src={IMG3} alt="" /> 
-         </div>
-         <h3>Project 3</h3>
-        <div className="portfolio__item__cta">
-         <a href='https://github.com' className="btn">Github</a>
-         <a href='https://dribbble.com/shots/20177733-Apres-Brand-Identity-Design' className="btn btn-primary" target="blank">Live Demo</a>
-        </div>
-      </article>
-
-      <article className="portfolio__item">
-         <div className="portfolio__item-image">
-             <img src={IMG4} alt="" /> 
-         </div>
-         <h3>Project 4</h3>
-        <div className="portfolio__item__cta">
-         <a href='https://github.com' className="btn">Github</a>
-         <a href='https://dribbble.com/shots/20177733-Apres-Brand-Identity-Design' className="btn btn-primary" target="blank">Live Demo</a>
-        </div>
-      </article>
-
-      <article className="portfolio__item">
-         <div className="portfolio__item-image">
-             <img src={IMG5} alt="" /> 
-         </div>
-         <h3>Project 5</h3>
-        <div className="portfolio__item__cta">
-         <a href='https://github.com' className="btn">Github</a>
-         <a href='https://dribbble.com/shots/20177733-Apres-Brand-Identity-Design' className="btn btn-primary" target="blank">Live Demo</a>
-        </div>
-      </article>
-
-      <article className="portfolio__item">
-         <div className="portfolio__item-image">
-             <img src={IMG6} alt="" /> 
-         </div>
-         <h3>Project 6</h3>
-        <div className="portfolio__item__cta">
-         <a href='https://github.com' className="btn">Github</a>
-         <a href='https://dribbble.com/shots/20177733-Apres-Brand-Identity-Design' className="btn btn-primary" target="blank">Live Demo</a>
-        </div>
-      </article>
-  </div>
-</section>
-)
-}
+  return (
+    <section id="portfolio">
+      <h5>My recent work</h5>
+      <h2>Portfolio</h2>
+      <div className="container portfolio__container">
+      {
+        data.map(({id, image, title, github, demo}) =>(
+          // return (
+            <article key={id} className="portfolio__item">
+              <div className="portfolio__item__image">
+                <img src={image} alt={title} className="portImage" />
+              </div>
+              <h3> {title} </h3>
+              <div className="portfolio__item__cta">
+                <a
+                  href={github}
+                  className="btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
+                <a
+                  href={demo}
+                  className="btn btn-primary"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </article>
+          // );
+        ))
+      }
+      </div>
+    </section>
+  );
+};
 export default Portfolio;
