@@ -2,7 +2,7 @@
 use('PortfolioBackend');
 
 // Insert a few documents into the PortfolioData collection.
-db.getCollection('portfolio').insertMany(
+db.getCollection('projects').insertMany(
     [
         {
           

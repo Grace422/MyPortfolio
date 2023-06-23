@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const portfoliomodel = new mongoose.model("portfolio", mongoose.Schema({
+
+const portfoliomodel = new mongoose.model("projects", mongoose.Schema({
 
     _id: String,
     image: String,
@@ -9,5 +10,5 @@ const portfoliomodel = new mongoose.model("portfolio", mongoose.Schema({
 }))
 
 module.exports = {
-     portfoliomodel
+    portfoliomodel
 }
